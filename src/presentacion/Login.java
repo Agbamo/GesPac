@@ -17,6 +17,7 @@ import java.util.HashMap;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
@@ -27,7 +28,7 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import org.eclipse.wb.swing.FocusTraversalOnArray;
 
-public class Login extends JFrame {
+public class Login extends JInternalFrame {
 
 	/**
 	 * 
