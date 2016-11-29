@@ -19,6 +19,7 @@ public class Pruebas extends JFrame {
 	private JPanel contentPane;
 	private GrupoHorasAgenda grupoHoras;
 	private JScrollPane scrollPane;
+	private SesionDoctor sesionDoctor;
 
 	/**
 	 * Launch the application.
@@ -47,6 +48,10 @@ public class Pruebas extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS));
+		{
+			sesionDoctor = new SesionDoctor("Alfredo Gómez Salido");
+			contentPane.add(sesionDoctor);
+		}
 		
 		grupoHoras = new GrupoHorasAgenda();
 		contentPane.add(grupoHoras);
