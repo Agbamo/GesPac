@@ -17,14 +17,18 @@ import java.util.HashMap;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import org.eclipse.wb.swing.FocusTraversalOnArray;
 
-public class Login extends JFrame {
+public class Login extends JInternalFrame {
 
 	/**
 	 * 
@@ -43,6 +47,7 @@ public class Login extends JFrame {
 	private JLabel lblInfoToSignIn;
 	private JPasswordField pwdfPassword;
 	private JLabel lblIconPass;
+	private JComboBox comboBox;
 	
 	/**
 	 * Launch the application.
@@ -67,7 +72,7 @@ public class Login extends JFrame {
 		setResizable(false);
 		setTitle("GesPaC - Login");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 600, 183);
+		setBounds(100, 100, 600, 244);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -79,10 +84,23 @@ public class Login extends JFrame {
 			contentPane.add(panel, BorderLayout.CENTER);
 			GridBagLayout gbl_panel = new GridBagLayout();
 			gbl_panel.columnWidths = new int[]{18, 0, 0, 48, 173, 18, 18, 0};
-			gbl_panel.rowHeights = new int[]{18, 16, 40, 0, 0, 18, 0};
-			gbl_panel.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, Double.MIN_VALUE};
-			gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+			gbl_panel.rowHeights = new int[]{0, 18, 16, 40, 0, 0, 18, 0};
+			gbl_panel.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, Double.MIN_VALUE};
+			gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 			panel.setLayout(gbl_panel);
+			{
+				String [] languaje_list = new String [] {"Español","English"};
+				comboBox = new JComboBox(languaje_list);
+				comboBox.setRenderer(new LanguajeRender());
+				
+				
+				GridBagConstraints gbc_comboBox = new GridBagConstraints();
+				gbc_comboBox.insets = new Insets(0, 0, 5, 5);
+				gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
+				gbc_comboBox.gridx = 5;
+				gbc_comboBox.gridy = 1;
+				panel.add(comboBox, gbc_comboBox);
+			}
 			{
 				lblInfoToSignIn = new JLabel("Ingrese sus credenciales para acceder a la aplicación.");
 				lblInfoToSignIn.setFont(new Font("Tahoma", Font.BOLD, 13));
@@ -91,17 +109,17 @@ public class Login extends JFrame {
 				gbc_lblInfoToSignIn.gridwidth = 3;
 				gbc_lblInfoToSignIn.insets = new Insets(0, 0, 5, 5);
 				gbc_lblInfoToSignIn.gridx = 3;
-				gbc_lblInfoToSignIn.gridy = 1;
+				gbc_lblInfoToSignIn.gridy = 2;
 				panel.add(lblInfoToSignIn, gbc_lblInfoToSignIn);
 			}
 			{
 				lblIconPass = new JLabel("");
-				lblIconPass.setIcon(new ImageIcon(Login.class.getResource("/presentacion/icons/password_lock-128.png")));
+				lblIconPass.setIcon(new ImageIcon(Login.class.getResource("/presentacion/icons/password_aterisco_red.png")));
 				GridBagConstraints gbc_lblIconPass = new GridBagConstraints();
 				gbc_lblIconPass.gridheight = 4;
 				gbc_lblIconPass.insets = new Insets(0, 0, 5, 5);
 				gbc_lblIconPass.gridx = 1;
-				gbc_lblIconPass.gridy = 1;
+				gbc_lblIconPass.gridy = 2;
 				panel.add(lblIconPass, gbc_lblIconPass);
 			}
 			{
@@ -110,7 +128,7 @@ public class Login extends JFrame {
 				gbc_lblUser.insets = new Insets(0, 0, 5, 5);
 				gbc_lblUser.anchor = GridBagConstraints.SOUTHWEST;
 				gbc_lblUser.gridx = 3;
-				gbc_lblUser.gridy = 2;
+				gbc_lblUser.gridy = 3;
 				panel.add(lblUser, gbc_lblUser);
 			}
 			{
@@ -124,7 +142,7 @@ public class Login extends JFrame {
 				gbc_txtUser.gridwidth = 2;
 				gbc_txtUser.insets = new Insets(0, 0, 5, 5);
 				gbc_txtUser.gridx = 4;
-				gbc_txtUser.gridy = 2;
+				gbc_txtUser.gridy = 3;
 				panel.add(txtUser, gbc_txtUser);
 				txtUser.setColumns(10);
 			}
@@ -135,7 +153,7 @@ public class Login extends JFrame {
 				gbc_lblPassword.anchor = GridBagConstraints.SOUTHEAST;
 				gbc_lblPassword.insets = new Insets(0, 0, 5, 5);
 				gbc_lblPassword.gridx = 3;
-				gbc_lblPassword.gridy = 3;
+				gbc_lblPassword.gridy = 4;
 				panel.add(lblPassword, gbc_lblPassword);
 			}
 			{
@@ -154,7 +172,7 @@ public class Login extends JFrame {
 					gbc_pwdfPassword.insets = new Insets(0, 0, 5, 5);
 					gbc_pwdfPassword.fill = GridBagConstraints.HORIZONTAL;
 					gbc_pwdfPassword.gridx = 4;
-					gbc_pwdfPassword.gridy = 3;
+					gbc_pwdfPassword.gridy = 4;
 					panel.add(pwdfPassword, gbc_pwdfPassword);
 				}
 				lblErrorText.setIcon(new ImageIcon(Login.class.getResource("/javax/swing/plaf/metal/icons/ocean/error.png")));
@@ -164,7 +182,7 @@ public class Login extends JFrame {
 				gbc_lblErrorText.gridwidth = 2;
 				gbc_lblErrorText.insets = new Insets(0, 0, 5, 5);
 				gbc_lblErrorText.gridx = 3;
-				gbc_lblErrorText.gridy = 4;
+				gbc_lblErrorText.gridy = 5;
 				panel.add(lblErrorText, gbc_lblErrorText);
 			}
 			{
@@ -175,10 +193,11 @@ public class Login extends JFrame {
 				gbc_btnAceptar.anchor = GridBagConstraints.EAST;
 				gbc_btnAceptar.insets = new Insets(0, 0, 5, 5);
 				gbc_btnAceptar.gridx = 5;
-				gbc_btnAceptar.gridy = 4;
+				gbc_btnAceptar.gridy = 5;
 				panel.add(btnAceptar, gbc_btnAceptar);
 			}
 		}
+		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{txtUser, pwdfPassword, btnAceptar, comboBox}));
 		recogerUsuarios();
 	}
 
@@ -210,7 +229,7 @@ public class Login extends JFrame {
 			lblErrorText.setVisible(true);
 			lblIconPass.setOpaque(true);
 			lblIconPass.setBackground(new Color(255,102,102));
-			
+			lblIconPass.setIcon(new ImageIcon(Login.class.getResource("/presentacion/icons/password_asteriscos_red.png")));
 
 			txtUser.setBackground(new Color(255,102,102));
 			txtUser.setForeground(Color.WHITE);
