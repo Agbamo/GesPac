@@ -20,6 +20,7 @@ public class Pruebas extends JFrame {
 	private GrupoHorasAgenda grupoHoras;
 	private JScrollPane scrollPane;
 	private SesionDoctor sesionDoctor;
+	private Languaje_selector languaje_selector;
 
 	/**
 	 * Launch the application.
@@ -55,6 +56,9 @@ public class Pruebas extends JFrame {
 		
 		grupoHoras = new GrupoHorasAgenda();
 		contentPane.add(grupoHoras);
+		
+		languaje_selector = new Languaje_selector();
+		contentPane.add(languaje_selector);
 		{
 			
 			

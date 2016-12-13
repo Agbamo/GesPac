@@ -28,7 +28,7 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import org.eclipse.wb.swing.FocusTraversalOnArray;
 
-public class Login extends JInternalFrame {
+public class Login extends JFrame {
 
 	/**
 	 * 
@@ -114,7 +114,7 @@ public class Login extends JInternalFrame {
 			}
 			{
 				lblIconPass = new JLabel("");
-				lblIconPass.setIcon(new ImageIcon(Login.class.getResource("/presentacion/icons/password_aterisco_red.png")));
+				lblIconPass.setIcon(new ImageIcon(Login.class.getResource("/presentacion/icons/password_star_blue.png")));
 				GridBagConstraints gbc_lblIconPass = new GridBagConstraints();
 				gbc_lblIconPass.gridheight = 4;
 				gbc_lblIconPass.insets = new Insets(0, 0, 5, 5);
@@ -229,7 +229,7 @@ public class Login extends JInternalFrame {
 			lblErrorText.setVisible(true);
 			lblIconPass.setOpaque(true);
 			lblIconPass.setBackground(new Color(255,102,102));
-			lblIconPass.setIcon(new ImageIcon(Login.class.getResource("/presentacion/icons/password_asteriscos_red.png")));
+			lblIconPass.setIcon(new ImageIcon(Login.class.getResource("/presentacion/icons/password_star_red.png")));
 
 			txtUser.setBackground(new Color(255,102,102));
 			txtUser.setForeground(Color.WHITE);

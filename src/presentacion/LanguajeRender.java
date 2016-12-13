@@ -2,7 +2,7 @@ package presentacion;
 import javax.swing.*;
 import java.awt.*;
 
-class LanguajeRender implements ListCellRenderer {
+class LanguajeRender extends JLabel implements ListCellRenderer {
 	protected DefaultListCellRenderer defaultRenderer = new DefaultListCellRenderer();
 	
 	ImageIcon SpanishLangIcon;
@@ -15,13 +15,13 @@ class LanguajeRender implements ListCellRenderer {
 	
 	public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean hasFocus)
 	{
-		JLabel renderer = (JLabel) defaultRenderer.getListCellRendererComponent(list, value, index, isSelected, hasFocus);
-		if (list.getModel().getElementAt(index) == "Español") {
-			renderer.setIcon(SpanishLangIcon);
-		} else
-			if (list.getModel().getElementAt(index) == "English"){
-				renderer.setIcon(EnglishLangIcon);
-			}
-		return renderer;
+		if (value == "Español") {
+			setIcon (SpanishLangIcon);
+			setText("Español");
+		} else {
+			setIcon (EnglishLangIcon);
+			setText("English");
+		}
+	    return this;
 	}
 }

@@ -33,8 +33,8 @@ public class DatosLogin extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					DatosLogin frame = new DatosLogin(nombre, apellidos, dni, ultimoAcceso); //Ver paso de parámetros.
-					frame.setVisible(true);
+					//DatosLogin frame = new DatosLogin(nombre, apellidos, dni, ultimoAcceso); //Ver paso de parï¿½metros.
+					//frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
