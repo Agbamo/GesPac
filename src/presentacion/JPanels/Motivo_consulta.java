@@ -8,6 +8,7 @@ import java.awt.Insets;
 import javax.swing.JTextArea;
 import javax.swing.JTabbedPane;
 import java.awt.Dimension;
+import java.awt.Rectangle;
 
 public class Motivo_consulta extends JPanel {
 	private JLabel lblMotivoDeLa;
@@ -17,6 +18,7 @@ public class Motivo_consulta extends JPanel {
 	 * Create the panel.
 	 */
 	public Motivo_consulta() {
+		setBounds(new Rectangle(0, 0, 650, 208));
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 483, 0};
 		gridBagLayout.rowHeights = new int[]{21, 9, 127, 0, 0};

@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridBagLayout;
@@ -13,7 +14,7 @@ import java.awt.Insets;
 import javax.swing.JTextField;
 import javax.swing.ImageIcon;
 
-public class DatosLogin extends JFrame {
+public class DatosLogin extends JInternalFrame {
 
 	private JPanel contentPane;
 	private JLabel lblNombre;
@@ -26,21 +27,21 @@ public class DatosLogin extends JFrame {
 	private JLabel lblImagen;
 	private JTextField txtNombre;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					DatosLogin frame = new DatosLogin(nombre, apellidos, dni, ultimoAcceso); //Ver paso de parámetros.
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	/**
+//	 * Launch the application.
+//	 */
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					DatosLogin frame = new DatosLogin(nombre, apellidos, dni, ultimoAcceso); //Ver paso de parámetros.
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	/**
 	 * Create the frame.
