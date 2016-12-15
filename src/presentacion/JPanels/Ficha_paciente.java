@@ -36,8 +36,6 @@ public class Ficha_paciente extends JPanel {
 	private JComboBox comboBox_1;
 	private JTextField txtDocumento;
 	private JLabel lblImagen;
-	private JLabel lblLaDeEspecialistas;
-	private JLabel lblDelMenuInicio;
 	private JTextArea textArea;
 
 	/**
@@ -100,13 +98,6 @@ public class Ficha_paciente extends JPanel {
 		Datos.add(txtDocumento, gbc_txtDocumento);
 		txtDocumento.setColumns(10);
 		
-		lblImagen = new JLabel("IMAGEN");
-		GridBagConstraints gbc_lblImagen = new GridBagConstraints();
-		gbc_lblImagen.insets = new Insets(0, 0, 5, 5);
-		gbc_lblImagen.gridx = 1;
-		gbc_lblImagen.gridy = 2;
-		Datos.add(lblImagen, gbc_lblImagen);
-		
 		lblNombre = new JLabel("Nombre");
 		GridBagConstraints gbc_lblNombre = new GridBagConstraints();
 		gbc_lblNombre.anchor = GridBagConstraints.EAST;
@@ -125,12 +116,13 @@ public class Ficha_paciente extends JPanel {
 		Datos.add(txtNombre, gbc_txtNombre);
 		txtNombre.setColumns(10);
 		
-		lblLaDeEspecialistas = new JLabel("La de especialistas");
-		GridBagConstraints gbc_lblLaDeEspecialistas = new GridBagConstraints();
-		gbc_lblLaDeEspecialistas.insets = new Insets(0, 0, 5, 5);
-		gbc_lblLaDeEspecialistas.gridx = 1;
-		gbc_lblLaDeEspecialistas.gridy = 3;
-		Datos.add(lblLaDeEspecialistas, gbc_lblLaDeEspecialistas);
+		lblImagen = new JLabel("IMAGEN");
+		GridBagConstraints gbc_lblImagen = new GridBagConstraints();
+		gbc_lblImagen.gridheight = 2;
+		gbc_lblImagen.insets = new Insets(0, 0, 5, 5);
+		gbc_lblImagen.gridx = 1;
+		gbc_lblImagen.gridy = 2;
+		Datos.add(lblImagen, gbc_lblImagen);
 		
 		lblApellidos = new JLabel("Apellidos");
 		GridBagConstraints gbc_lblApellidos = new GridBagConstraints();
@@ -149,13 +141,6 @@ public class Ficha_paciente extends JPanel {
 		gbc_txtApellidos.gridy = 3;
 		Datos.add(txtApellidos, gbc_txtApellidos);
 		txtApellidos.setColumns(10);
-		
-		lblDelMenuInicio = new JLabel("del menu inicio");
-		GridBagConstraints gbc_lblDelMenuInicio = new GridBagConstraints();
-		gbc_lblDelMenuInicio.insets = new Insets(0, 0, 5, 5);
-		gbc_lblDelMenuInicio.gridx = 1;
-		gbc_lblDelMenuInicio.gridy = 4;
-		Datos.add(lblDelMenuInicio, gbc_lblDelMenuInicio);
 		
 		lblFechaDeNacimiento = new JLabel("Fecha de nacimiento");
 		GridBagConstraints gbc_lblFechaDeNacimiento = new GridBagConstraints();
